@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 mx-auto p-4 border">
+            <div class="text-center my-2 py-3 mt-4"><h4>Add Contacts</h4></div>
+
+            <div class="mt-4">
+                <form [formGroup]="myContactForm" (ngSubmit)="submitUpdateContactForm()">
+                    <div class="form-group">
+                        <label for="name">Contact Name*</label>
+                        <input type="text" formControlName="name" id="name" class="form-control">
+                        <small *ngIf="!myContactForm.get('name').valid && myContactForm.get('name').touched" class="text-danger">Contact Name Required!</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Contact Email*</label>
+                        <input type="text" formControlName="email" id="email" class="form-control">
+                        <small *ngIf="!myContactForm.get('email').valid && myContactForm.get('email').touched" class="text-danger">Contact Email Required!</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Contact Number*</label>
+                        <input type="number" formControlName="phone" id="phone" class="form-control">
+                        <small *ngIf="!myContactForm.get('phone').valid && myContactForm.get('phone').touched" class="text-danger">Contact Phone Required!</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="jobtitle">Job Title*</label>
+                        <input type="text" formControlName="jobtitle" id="jobtitle" class="form-control">
+                        <small *ngIf="!myContactForm.get('jobtitle').valid && myContactForm.get('jobtitle').touched" class="text-danger"> Job Title Required!</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="company">Company*</label>
+                        <input type="text" formControlName="company" id="company" class="form-control">
+                        <small *ngIf="!myContactForm.get('company').valid && myContactForm.get('company').touched" class="text-danger"> Company Required!</small>
+                    </div>
+                    <button class="btn btn-success" type="submit" [disabled]="!myContactForm.valid">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
